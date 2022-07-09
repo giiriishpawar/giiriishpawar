@@ -1,15 +1,14 @@
 import './App.css';
-import ProgressBar from './components/ProgressBar';
 
-let name = 'G I R I S H  P A W A R';
+let firstName = 'G I R I S H';
+let lastName = 'P A W A R';
 function App() {
   return (
     <>
-      <ProgressBar></ProgressBar>
       <div className="App">
         <header className="App-header">
           <p>
-            <b>{name}</b>
+            <b>{firstName}&nbsp;&nbsp;&nbsp;&nbsp;{lastName}</b>
           </p>
         </header>
       </div>
