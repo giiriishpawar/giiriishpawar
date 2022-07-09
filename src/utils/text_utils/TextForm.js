@@ -5,19 +5,32 @@ export default function TextForm(props) {
     const handleUpperCaseClick = ()=> {
         setText(text.toUpperCase())
     }
+    const handleLowerCaseClick = ()=> {
+        setText(text.toLocaleLowerCase())
+    }
     const handleOnChange = (e)=> {
         console.log('on change fire');
         setText(e.target.value)
     }
-    const [text, setText] = useState('Enter Text Here');
+    const [text, setText] = useState('');
     return (
-        <div>
-            <h2>{props.lable}</h2>
-            <div className="mb-3">
-                <textarea value={text} onChange={handleOnChange} className="form-control" id="textAreaBox" rows="12" placeholder={props.lable} />
+        <>
+            <div className='container'>
+                <h2>{props.lable}</h2>
+                <div className="mb-3">
+                    <textarea value={text} onChange={handleOnChange} className="form-control" id="textAreaBox" rows="12" placeholder={props.lable} />
+                </div>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleUpperCaseClick}>Convert to upper case</button>
+                <button className="btn btn-primary mb-3" onClick={handleLowerCaseClick}>Convert to lower case</button>
             </div>
-            <button className="btn btn-primary" onClick={handleUpperCaseClick}>Convert to upper case</button>
-        </div>
+            <div className='container'>
+                <h3>Your text Summary</h3>
+                <p>{text.split(' ').length} words and {text.length} characters. </p>
+                <p>{0.008 * text.length} Minutes read</p>
+                <h4>Preview</h4>
+                <p>{text}</p>
+            </div>
+        </>
     )
 }
 
