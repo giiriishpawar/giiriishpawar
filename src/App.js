@@ -7,6 +7,9 @@ function App() {
   return (
       <div className="App">
         <Navbar title="Girish Pawar" aboutText="About" />
+        {/* <Navbar/> */}
+        {/* for isRequired 
+        <Navbar title="Girish Pawar"/> */}
         <header className="App-header">
           <p>
             <b>{firstName}&nbsp;&nbsp;&nbsp;&nbsp;{lastName}</b>
