@@ -6,7 +6,7 @@ let lastName = 'P A W A R';
 function App() {
   return (
       <div className="App">
-        <Navbar/>
+        <Navbar title="Girish Pawar" aboutText="About" />
         <header className="App-header">
           <p>
             <b>{firstName}&nbsp;&nbsp;&nbsp;&nbsp;{lastName}</b>

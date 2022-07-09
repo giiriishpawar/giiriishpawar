@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
   return (
     <nav className="navbar fixed-top navbar-expand-lg bg-light">
         <div className="container-fluid">
-            <a className="navbar-brand" href="/">Navbar</a>
+            <a className="navbar-brand" href="/">{props.title}</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -17,7 +18,7 @@ export default function Navbar(props) {
                 <a className="nav-link" href="/">Features</a>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link" href="/">Pricing</a>
+                <a className="nav-link" href="/">{props.aboutText}</a>
                 </li>
                 <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,4 +35,9 @@ export default function Navbar(props) {
         </div>
     </nav>
   )
+}
+
+Navbar.propTypes = {
+    title: PropTypes.string,
+    aboutText: PropTypes.string
 }
