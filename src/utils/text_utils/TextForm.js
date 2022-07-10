@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 
 export default function TextForm(props) {
     const handleUpperCaseClick = ()=> {
-        setText(text.toUpperCase())
+        setText(text.toUpperCase());
     }
     const handleLowerCaseClick = ()=> {
-        setText(text.toLocaleLowerCase())
+        setText(text.toLocaleLowerCase());
+    }
+    const handleClearTextClick = ()=> {
+        setText('');
     }
     const handleOnChange = (e)=> {
         console.log('on change fire');
@@ -21,7 +24,8 @@ export default function TextForm(props) {
                     <textarea value={text} onChange={handleOnChange} className="form-control" id="textAreaBox" rows="12" placeholder={props.lable} />
                 </div>
                 <button className="btn btn-primary mb-3 mx-2" onClick={handleUpperCaseClick}>Convert to upper case</button>
-                <button className="btn btn-primary mb-3" onClick={handleLowerCaseClick}>Convert to lower case</button>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleLowerCaseClick}>Convert to lower case</button>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleClearTextClick}>Clear Text</button>
             </div>
             <div className='container'>
                 <h3>Your text Summary</h3>
