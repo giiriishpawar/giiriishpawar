@@ -2,6 +2,10 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types';
 
 export default function TextForm(props) {
+    const handleOnChange = (e)=> {
+        console.log('on change fire');
+        setText(e.target.value)
+    }
     const handleUpperCaseClick = ()=> {
         setText(text.toUpperCase());
     }
@@ -11,9 +15,13 @@ export default function TextForm(props) {
     const handleClearTextClick = ()=> {
         setText('');
     }
-    const handleOnChange = (e)=> {
-        console.log('on change fire');
-        setText(e.target.value)
+    const handleCopyClick = (e)=> {
+        let text = document.getElementById("textAreaBox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+    }
+    const handleExtraSpaceClick = ()=> {
+        setText(text.split(/[ ]+/).join(' '));
     }
     const [text, setText] = useState('');
     return (
@@ -26,6 +34,8 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mb-3 mx-2" onClick={handleUpperCaseClick}>Convert to upper case</button>
                 <button className="btn btn-primary mb-3 mx-2" onClick={handleLowerCaseClick}>Convert to lower case</button>
                 <button className="btn btn-primary mb-3 mx-2" onClick={handleClearTextClick}>Clear Text</button>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleCopyClick}>Copy</button>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleExtraSpaceClick}>Remove Extra Space</button>
             </div>
             <div className='container'>
                 <h3>Your text Summary</h3>
