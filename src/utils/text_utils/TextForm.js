@@ -23,26 +23,48 @@ export default function TextForm(props) {
     const handleExtraSpaceClick = ()=> {
         setText(text.split(/[ ]+/).join(' '));
     }
+
+    const handleFirstLetterToUppoerCaseClick = ()=> {
+        handleExtraSpaceClick();
+        let newText = text.split(/[ ]+/).join(' ').split('');
+        for (let i=0; i<newText.length; i++) {
+            if (i===0) {
+                newText[i] = newText[i].toUpperCase();
+            } else if (newText[i] === '.' && newText[i+1] === ' ' && newText[i+1] !== undefined) {
+                newText[i+2] = newText[i+2].toUpperCase();
+                i++;
+                i++;
+            } else if (newText[i] === '.' && newText[i+1] !== ' ' && newText[i+1] !== undefined) {
+                newText[i+1] = newText[i+1].toUpperCase();
+                i++;
+            } else {
+                newText[i] = newText[i].toLowerCase();
+            }
+        }
+        setText(newText.join(''));
+    }
+    
     const [text, setText] = useState('');
     return (
         <>
-            <div className='container'>
+            <div className='container' style={{color: props.mode==='light'?'#292F33':'white'}}>
                 <h2>{props.lable}</h2>
                 <div className="mb-3">
-                    <textarea value={text} onChange={handleOnChange} className="form-control" id="textAreaBox" rows="12" placeholder={props.lable} />
+                    <textarea value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='light'?'white':'#778899', color: props.mode==='light'?'black':'white', width:'60%'}} className="form-control" id="textAreaBox" rows="8" />
                 </div>
-                <button className="btn btn-primary mb-3 mx-2" onClick={handleUpperCaseClick}>Convert to upper case</button>
-                <button className="btn btn-primary mb-3 mx-2" onClick={handleLowerCaseClick}>Convert to lower case</button>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleUpperCaseClick}>To Upper Case</button>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleLowerCaseClick}>To Lower Case</button>
                 <button className="btn btn-primary mb-3 mx-2" onClick={handleClearTextClick}>Clear Text</button>
                 <button className="btn btn-primary mb-3 mx-2" onClick={handleCopyClick}>Copy</button>
-                <button className="btn btn-primary mb-3 mx-2" onClick={handleExtraSpaceClick}>Remove Extra Space</button>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleExtraSpaceClick}>Remove Extra Spaces</button>
+                <button className="btn btn-primary mb-3 mx-2" onClick={handleFirstLetterToUppoerCaseClick}>First Letter to Upper Case</button>
             </div>
-            <div className='container'>
+            <div className='container' style={{color: props.mode==='light'?'black':'white'}}>
                 <h3>Your text Summary</h3>
                 <p>{text.split(' ').length} words and {text.length} characters. </p>
                 <p>{0.008 * text.length} Minutes read</p>
                 <h4>Preview</h4>
-                <p>{text}</p>
+                <p>{text.length>0?text:'Enter something in text box above to preview it here.'}</p>
             </div>
         </>
     )
