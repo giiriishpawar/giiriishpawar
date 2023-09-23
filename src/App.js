@@ -1,9 +1,15 @@
-import React, {useState} from 'react'
-import Alert from './alerts/Alert';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import Alert from './views/Alerts/Alert';
 import './App.css';
-//import About from './components/home/About';
-import Navbar from'./components/home/Navbar';
-import TextForm from './utils/text_utils/TextForm';
+// import About from './views/About/About';
+import Navbar from'./components/layout/navigation/Navbar/Navbar';
+import TextForm from './views/Home/TextForm';
 
 let firstName = 'G I R I S H';
 let lastName = 'P A W A R';
