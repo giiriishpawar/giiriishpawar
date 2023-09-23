@@ -27,7 +27,7 @@ export default function ProgressBar(props) {
   return (
     <>
 
-        <div id="txt" style={{color: props.mode==='light'?'#292F33':'white'}}><a href="#" onClick={startClock}>Start</a> </div>
+        <div id="txt" style={{color: props.mode==='light'?'#292F33':'white'}}><a href="#" onClick={startClock}>Show Clock</a> </div>
         <div className="progress-container">
             <div className="progress-bar" id="myBar"></div>
         </div>
