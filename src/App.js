@@ -26,7 +26,7 @@ function App() {
     });
     setTimeout(()=>{
       setAlert(null);
-    }, 3000);
+    }, 7000);
   }
 
   const toggleMode = ()=> {
@@ -47,13 +47,13 @@ function App() {
   return (
     <div className="container">
       <header className="App-header">
-        <Navbar title={`${firstName} ${lastName} . I N`} aboutText="About" mode={mode} toggleMode={toggleMode}/>
+        <Navbar title={`${firstName} ${lastName} . I N`} aboutText="About" mode={mode} toggleMode={toggleMode} alert={alert}/>
         {/* <Navbar/> */}
         {/* for isRequired 
         <Navbar title="Girish Pawar"/> */}
       </header>
       <section>
-      <Alert alert={alert}/>
+      {/* <Alert alert={alert}/> */}
       <ProgressBar mode={mode}></ProgressBar>
         <TextForm lable="Enter text to Analysis" mode={mode} showAlert={showAlert}/>
         {/* <About/> */}

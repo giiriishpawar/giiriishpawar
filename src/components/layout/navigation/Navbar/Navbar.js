@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import Alert from '../../../../views/Alerts/Alert';
+
 
 export default function Navbar(props) {
+
   return (
     <nav className={`navbar fixed-top navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
@@ -32,6 +35,7 @@ export default function Navbar(props) {
                 </li>
             </ul>
             </div>
+            <div><Alert alert={props.alert}></Alert></div>
             <div className={`form-check form-switch text-${props.mode==='dark'?'light':'dark'}`}>
             <span className="fa-solid fa-moon" onClick={props.toggleMode}></span>
                 {/* <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode}/>
