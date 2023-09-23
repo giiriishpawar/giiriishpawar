@@ -10,6 +10,7 @@ import './App.css';
 // import About from './views/About/About';
 import Navbar from'./components/layout/navigation/Navbar/Navbar';
 import TextForm from './views/Home/TextForm';
+import ProgressBar from './views/ProgressBar/ProgressBar';
 
 let firstName = 'G I R I S H';
 let lastName = 'P A W A R';
@@ -47,9 +48,10 @@ function App() {
         {/* <Navbar/> */}
         {/* for isRequired 
         <Navbar title="Girish Pawar"/> */}
-        <Alert alert={alert}/>
       </header>
       <section>
+      <Alert alert={alert}/>
+      <ProgressBar></ProgressBar>
         <TextForm lable="Enter text to Analysis" mode={mode} showAlert={showAlert}/>
         {/* <About/> */}
         {/* <p>
