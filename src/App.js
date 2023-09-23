@@ -1,6 +1,9 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import '@fortawesome/fontawesome-free/css/fontawesome.css'
+import '@fortawesome/fontawesome-free/css/brands.css'
+import '@fortawesome/fontawesome-free/css/solid.css'
 import $ from 'jquery';
 import Popper from 'popper.js';
 import React, {useState} from 'react';
@@ -51,7 +54,7 @@ function App() {
       </header>
       <section>
       <Alert alert={alert}/>
-      <ProgressBar></ProgressBar>
+      <ProgressBar mode={mode}></ProgressBar>
         <TextForm lable="Enter text to Analysis" mode={mode} showAlert={showAlert}/>
         {/* <About/> */}
         {/* <p>
