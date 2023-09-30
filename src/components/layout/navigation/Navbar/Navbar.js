@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Navbar.css';
 import Alert from '../../../../views/Alerts/Alert';
 
-export default function Navbar(props) {
+const Navbar = (props) => {
 
   return (
     <nav className={`navbar fixed-top navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -51,3 +51,5 @@ Navbar.propTypes = {
     title: "Set title here",
     aboutText: "Set about here"
  }
+
+ export default Navbar;
