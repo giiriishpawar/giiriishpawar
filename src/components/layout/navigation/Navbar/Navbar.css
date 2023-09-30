@@ -1,0 +1,43 @@
+div.icon-night-mode {
+    display: inline-flex !important;
+    border: none !important;
+}
+div.form-check.form-switch.text-light, div.form-check.form-switch.text-dark {
+    padding: 0.7rem 0.7rem 0px 0px !important;
+}
+
+@media (min-width: 576px) { 
+    .mq-flex-jc-sb {
+        display: flex;
+        justify-content: space-between;
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .mq-flex-jc-sb {
+        display: flex;
+        justify-content: space-between;
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    div.icon-night-mode {
+        display: none !important;
+    }
+ }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    div.icon-night-mode {
+        display: none !important;
+    }
+ }
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+    div.icon-night-mode {
+        display: none !important;
+    }
+ }

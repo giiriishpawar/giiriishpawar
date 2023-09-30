@@ -7,17 +7,18 @@ import '@fortawesome/fontawesome-free/css/solid.css'
 import $ from 'jquery';
 import Popper from 'popper.js';
 import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
-import Alert from './views/Alerts/Alert';
 import './App.css';
-// import About from './views/About/About';
 import Navbar from'./components/layout/navigation/Navbar/Navbar';
 import TextForm from './views/Home/TextForm';
 import ProgressBar from './views/ProgressBar/ProgressBar';
 
-let firstName = 'G I R I S H';
-let lastName = 'P A W A R';
-function App() {
+const firstName = 'G I R I S H';
+const lastName = 'P A W A R';
+const navBarMenu = {'single': ['Home', 'About'], 'multi': [{'Utilities': ['String Operations'] }]};
+
+const App = ()=> {
+  const [mode, setMode] = useState('light');
+  const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type)=> {
     setAlert({
@@ -41,25 +42,14 @@ function App() {
     }
   }
 
-  const [mode, setMode] = useState('light');
-  const [alert, setAlert] = useState(null);
-
   return (
     <div className="container">
       <header className="App-header">
-        <Navbar title={`${firstName} ${lastName} . I N`} aboutText="About" mode={mode} toggleMode={toggleMode} alert={alert}/>
-        {/* <Navbar/> */}
-        {/* for isRequired 
-        <Navbar title="Girish Pawar"/> */}
+        <Navbar title={`${firstName} ${lastName} . I N`} navBarMenu={navBarMenu} mode={mode} toggleMode={toggleMode} alert={alert}/>
       </header>
       <section>
-      {/* <Alert alert={alert}/> */}
-      <ProgressBar mode={mode}></ProgressBar>
-        <TextForm lable="Enter text to Analysis" mode={mode} showAlert={showAlert}/>
-        {/* <About/> */}
-        {/* <p>
-          <b>{firstName}&nbsp;&nbsp;&nbsp;&nbsp;{lastName}</b>
-        </p> */}
+        <ProgressBar mode={mode}></ProgressBar>
+          <TextForm lable="Enter text to Analysis" mode={mode} showAlert={showAlert}/>  
       </section>
     </div>
   );
