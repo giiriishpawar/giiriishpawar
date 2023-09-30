@@ -1,7 +1,7 @@
-import React from 'react';
 import './Alert.css';
+import React from 'react';
 
-export default function Alert(props) {
+const Alert = (props) => {
   return (
     props.alert && 
         <div className={`alert alert-${props.alert.type.toLowerCase()} sm-alert wsnw`} role="alert">
@@ -9,3 +9,5 @@ export default function Alert(props) {
         </div>
   )
 }
+
+export default Alert;

@@ -1,13 +1,13 @@
 import './ProgressBar.css';
 
-export default function ProgressBar(props) {
+const ProgressBar = (props)=> {
   
     const startClock = ()=> {
         console.log('clock started.')
         startTime();
     } 
 
-    function startTime() {
+    const startTime = ()=> {
         const today = new Date();
         let h = today.getHours();
         let m = today.getMinutes();
@@ -19,7 +19,7 @@ export default function ProgressBar(props) {
         document.getElementById("myBar").style.width = s*1.5 + "%";
     }
         
-    function checkTime(i) {
+    const checkTime = (i)=> {
         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
         return i;
     }
@@ -33,3 +33,5 @@ export default function ProgressBar(props) {
     </h6>
   );
 } 
+
+export default ProgressBar;
