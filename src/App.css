@@ -6,4 +6,6 @@
   color: white;
   margin-top: 100px;
 }
-
+.wsnw {
+  white-space: nowrap !important;
+}

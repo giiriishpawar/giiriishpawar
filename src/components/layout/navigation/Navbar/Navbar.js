@@ -33,7 +33,10 @@ export default function Navbar(props) {
             </ul>
             </div>
         </div>
-        <div><Alert alert={props.alert}></Alert></div>
+        <Alert alert={props.alert}></Alert>
+        <div className={`form-check form-switch text-${props.mode==='dark'?'light':'dark'} icon-night-mode-lg`}>
+            <span className="fa-solid fa-moon" onClick={props.toggleMode}></span>
+        </div>
     </nav>
   )
 }
